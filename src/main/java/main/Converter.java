@@ -45,14 +45,41 @@ public class Converter {
 						}
 					}
 					checker = false;
+					menuSelectionInt = 0;
 					break;
 				}
 				case 2: { // Miles to Kilometers
-					System.out.println("Miles to Kilometers");
+						while(checker == false) {
+						
+						System.out.println("Please Enter Mile Amount: ");
+						unitSelectionStr = unitScan.nextLine();
+						try {
+							unitSelectionFloat = Float.parseFloat(unitSelectionStr);
+							checker = true;
+							System.out.println("Kilometer amount: " + (unitSelectionFloat * 1.609344));
+						} catch(NumberFormatException e) {
+							System.out.println("That was not valid input.");
+						}
+					}
+					checker = false;
+					menuSelectionInt = 0;
 					break;
 				}
 				case 3: { // US Gallons to Imperial Gallons
-					System.out.println("US Gallons to Imperial Gallons");
+						while(checker == false) {
+						
+						System.out.println("Please Enter US Gallon Amount: ");
+						unitSelectionStr = unitScan.nextLine();
+						try {
+							unitSelectionFloat = Float.parseFloat(unitSelectionStr);
+							checker = true;
+							System.out.println("Imperial Gallon amount: " + (unitSelectionFloat * 0.832673));
+						} catch(NumberFormatException e) {
+							System.out.println("That was not valid input.");
+						}
+					}
+					checker = false;
+					menuSelectionInt = 0;
 					break;
 				}
 				case 4: { // Quit
@@ -61,6 +88,7 @@ public class Converter {
 				}
 				default: { // Bad Input
 					System.out.println("You must choose a number between 1-4.");
+					menuSelectionInt = 0;
 					break;
 				}
 					
