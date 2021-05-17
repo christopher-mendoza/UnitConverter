@@ -29,11 +29,9 @@ public class Converter {
 				System.out.println("That was not valid input.");
 			}
 			
-			
 			switch(menuSelectionInt) {
 				case 1: { // Cups to Teaspoons
-					while(checker == false) {
-						
+					while(checker == false) { // Check if input is valid
 						System.out.println("Please Enter Cup Amount: ");
 						unitSelectionStr = unitScan.nextLine();
 						try {
@@ -44,13 +42,12 @@ public class Converter {
 							System.out.println("That was not valid input.");
 						}
 					}
-					checker = false;
-					menuSelectionInt = 0;
+					checker = false;      // Reset Checker
+					menuSelectionInt = 0; // Reset Menu
 					break;
 				}
 				case 2: { // Miles to Kilometers
-						while(checker == false) {
-						
+					while(checker == false) { // Check if input is valid
 						System.out.println("Please Enter Mile Amount: ");
 						unitSelectionStr = unitScan.nextLine();
 						try {
@@ -61,13 +58,12 @@ public class Converter {
 							System.out.println("That was not valid input.");
 						}
 					}
-					checker = false;
-					menuSelectionInt = 0;
+					checker = false;      // Reset Checker
+					menuSelectionInt = 0; // Reset Menu 
 					break;
 				}
 				case 3: { // US Gallons to Imperial Gallons
-						while(checker == false) {
-						
+					while(checker == false) { // Check of input is valid
 						System.out.println("Please Enter US Gallon Amount: ");
 						unitSelectionStr = unitScan.nextLine();
 						try {
@@ -78,8 +74,8 @@ public class Converter {
 							System.out.println("That was not valid input.");
 						}
 					}
-					checker = false;
-					menuSelectionInt = 0;
+					checker = false;      // Reset Checker
+					menuSelectionInt = 0; // Reset Menu
 					break;
 				}
 				case 4: { // Quit
@@ -90,11 +86,9 @@ public class Converter {
 					System.out.println("You must choose a number between 1-4.");
 					menuSelectionInt = 0;
 					break;
-				}
-					
+				}	
 			}
 		}
-		
 		menuScan.close();
 		unitScan.close();
 	}
