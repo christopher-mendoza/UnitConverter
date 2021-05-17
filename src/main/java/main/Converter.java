@@ -16,9 +16,38 @@ public class Converter {
 							 + "3. US Gallons to Imperial Gallons\n"
 							 + "4. Quit");
 			menuSelectionStr = scan.nextLine();
-			menuSelectionInt = Integer.parseInt(menuSelectionStr);
+			
+			// Check if the input is a number
+			try {
+				menuSelectionInt = Integer.parseInt(menuSelectionStr);
+			} catch(NumberFormatException e) {
+				System.out.println("That was not valid input.");
+			}
 			
 			
+			switch(menuSelectionInt) {
+				case 1: { // Cups to Teaspoons
+					System.out.println("Cups to teaspoo");
+					break;
+				}
+				case 2: { // Miles to Kilometers
+					System.out.println("Miles to Kilometers");
+					break;
+				}
+				case 3: { // US Gallons to Imperial Gallons
+					System.out.println("US Gallons to Imperial Gallons");
+					break;
+				}
+				case 4: { // Quit
+					System.out.println("You have quit the Unit Converter.");
+					break;
+				}
+				default: { // Bad Input
+					System.out.println("You must choose a number between 1-4.");
+					break;
+				}
+					
+			}
 		}
 		
 		scan.close();
