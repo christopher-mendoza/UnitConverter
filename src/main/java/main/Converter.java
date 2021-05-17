@@ -7,15 +7,20 @@ public class Converter {
 	public static void main(String args[]) {
 		int menuSelectionInt = 0;
 		String menuSelectionStr = "";
-		Scanner scan = new Scanner(System.in);
+		Scanner menuScan = new Scanner(System.in);
+		float unitSelectionFloat = 0;
+		String unitSelectionStr = "";
+		Scanner unitScan = new Scanner(System.in);
+		
+		boolean checker = false;
 		
 		while(menuSelectionInt != 4) {
-			System.out.println("Please select an option:\n"
+			System.out.println("\nPlease select an option:\n"
 							 + "1. Cups to Teaspoons\n"
 							 + "2. Miles to Kilometers\n"
 							 + "3. US Gallons to Imperial Gallons\n"
 							 + "4. Quit");
-			menuSelectionStr = scan.nextLine();
+			menuSelectionStr = menuScan.nextLine();
 			
 			// Check if the input is a number
 			try {
@@ -27,7 +32,19 @@ public class Converter {
 			
 			switch(menuSelectionInt) {
 				case 1: { // Cups to Teaspoons
-					System.out.println("Cups to teaspoo");
+					while(checker == false) {
+						
+						System.out.println("Please Enter Cup Amount: ");
+						unitSelectionStr = unitScan.nextLine();
+						try {
+							unitSelectionFloat = Float.parseFloat(unitSelectionStr);
+							checker = true;
+							System.out.println("Teaspoon amount: " + (unitSelectionFloat * 48));
+						} catch(NumberFormatException e) {
+							System.out.println("That was not valid input.");
+						}
+					}
+					checker = false;
 					break;
 				}
 				case 2: { // Miles to Kilometers
@@ -50,7 +67,8 @@ public class Converter {
 			}
 		}
 		
-		scan.close();
+		menuScan.close();
+		unitScan.close();
 	}
 
 }
